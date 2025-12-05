@@ -1,6 +1,0 @@
-
-
-"""
-Initialize model related tools.
-"""
-
