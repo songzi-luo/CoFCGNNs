@@ -254,8 +254,8 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_path', type=str, default='./pretrain_data/json1')
-    parser.add_argument('--output_dir', type=str, default='./pretrain_catch_data')
+    parser.add_argument('--data_path', type=str, default=rf'../../pretrain_data/json1')
+    parser.add_argument('--output_dir', type=str, default='../../pretrain_catch_data')
     parser.add_argument('--chunk_size', type=int, default=10000)
     parser.add_argument('--num_workers', type=int, default=30)
     parser.add_argument('--test_size', type=int, default=None)

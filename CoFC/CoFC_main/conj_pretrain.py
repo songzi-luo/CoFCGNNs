@@ -15,7 +15,7 @@ import paddle.distributed as dist
 from datasets.Load_dataset import LoadDataset
 from utils import load_json_config
 from featurizers.feature_abstracter import PredCollateFn
-from model_zoo.model import CoFCModel, spatial_head,energy_head
+from model.model import CoFCModel, spatial_head,energy_head
 
 def train(args, model, optimizer, data_gen):
     """tbd"""
@@ -159,13 +159,13 @@ if __name__ == '__main__':
     parser.add_argument("--DEBUG", action='store_true', default=False)
     parser.add_argument("--distributed", action='store_true', default=True)
     parser.add_argument("--batch_size", type=int, default=256)
-    parser.add_argument("--num_workers", type=int, default=4)
-    parser.add_argument("--max_epoch", type=int, default=100)
-    parser.add_argument("--data_path", type=str, default=None)
+    parser.add_argument("--num_workers", type=int, default=1)
+    parser.add_argument("--max_epoch", type=int, default=50)
+    parser.add_argument("--data_path", type=str, default='../pretrain_catch_data')
     parser.add_argument("--test_ratio", type=float, default=0.1)
-    parser.add_argument("--encoder_config", type=str)
-    parser.add_argument("--model_config", type=str)
-    parser.add_argument("--init_model", type=str)
+    parser.add_argument("--encoder_config", type=str, default='model_configs/gnn_settings.json')
+    parser.add_argument("--model_config", type=str, default='model_configs/pretrain.json')
+    parser.add_argument("--init_model", type=str, default='epoch0.pdparams')
     parser.add_argument("--model_dir_spa", type=str,default='./pretrain_models/spa')
     parser.add_argument("--model_dir_ene", type=str,default='./pretrain_models/ene')
     parser.add_argument("--lr", type=float, default=0.001)
