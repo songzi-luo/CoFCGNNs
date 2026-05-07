@@ -132,7 +132,7 @@ if __name__ == '__main__':
     parser.add_argument("--split_type", default='scaffold', choices=['random', 'scaffold',  'index'])
     parser.add_argument("--encoder_config", type=str, default='model_configs/gnn_settings.json')
     parser.add_argument("--model_config", type=str, default='model_configs/down_mlp3.json')
-    parser.add_argument("--init_model", type=str, default='pretrain_models/best.pdparams')  # GEM_pretrain_models/zinc_lr0001_bs512/epoch45.pdparams
+    parser.add_argument("--init_model", type=str, default='pretrain_models/best.pdparams')  
     parser.add_argument("--model_dir", type=str, default='downstream_models')
     parser.add_argument("--encoder_lr", type=float, default=0.001)  # 0.001
     parser.add_argument("--head_lr", type=float, default=0.001)  # 0.001
